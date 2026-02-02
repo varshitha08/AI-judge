@@ -1,0 +1,94 @@
+Your move: rock
+-----ROUND RESULT-----
+{
+"round": 1,
+"user_input": "rock",
+"interpreted_intent": "rock",
+"move_status": "VALID",
+"reasoning": "The user's input 'rock' is a direct and unambiguous match for the valid move 'rock'. According to the game rules, rock vs paper results in a win for paper, so the bot wins this round.",
+"user_move": "rock",
+"bot_move": "paper",
+"round_winner": "bot",
+"bomb_consumed": false,
+"state_update": {
+"user_bomb_available": true
+},
+"next_action": "Proceed to the next round."
+}
+
+Your move: I throw a big stone
+-----ROUND RESULT-----
+{
+"round": 2,
+"user_input": "I throw a big stone",
+"interpreted_intent": "rock",
+"move_status": "VALID",
+"reasoning": "The phrase 'I throw a big stone' clearly maps to the move 'rock'. According to the game rules, rock beats scissors, so the user wins this round.",
+"user_move": "rock",
+"bot_move": "scissors",
+"round_winner": "user",
+"bomb_consumed": false,
+"state_update": {
+"user_bomb_available": true
+},
+"next_action": "Proceed to the next round."
+}
+
+Your move: bomb
+-----ROUND RESULT-----
+{
+"round": 3,
+"user_input": "bomb",
+"interpreted_intent": "bomb",
+"move_status": "VALID",
+"reasoning": "The user clearly chose 'bomb' and has not used it before. Bomb beats all normal moves, including 'rock', so the user wins this round and consumes their bomb.",
+"user_move": "bomb",
+"bot_move": "rock",
+"round_winner": "user",
+"bomb_consumed": true,
+"state_update": {
+"user_bomb_available": false
+},
+"next_action": "Proceed to the next round."
+}
+
+Your move: bomb again
+-----ROUND RESULT-----
+{
+"round": 4,
+"user_input": "bomb again",
+"interpreted_intent": "bomb",
+"move_status": "INVALID",
+"reasoning": "The user is trying to use 'bomb' a second time, but the game rules allow bomb only once per player. This makes the move invalid and the bot wins the round.",
+"user_move": "none",
+"bot_move": "paper",
+"round_winner": "bot",
+"bomb_consumed": false,
+"state_update": {
+"user_bomb_available": false
+},
+"next_action": "Proceed to the next round."
+}
+
+Your move: abc
+-----ROUND RESULT-----
+{
+"round": 5,
+"user_input": "abc",
+"interpreted_intent": "none",
+"move_status": "INVALID",
+"reasoning": "The input 'abc' does not correspond to any valid move (rock, paper, scissors, or bomb). Per the game rules, invalid input wastes the turn and results in a loss for the user.",
+"user_move": "none",
+"bot_move": "scissors",
+"round_winner": "bot",
+"bomb_consumed": false,
+"state_update": {
+"user_bomb_available": false
+},
+"next_action": "Proceed to the next round."
+}
+
+Your move: quit
+Final Score:
+User: 2 | Bot: 3
+Final Result: Bot wins
